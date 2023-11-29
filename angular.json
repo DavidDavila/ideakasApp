@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/app",
+            "outputPath": "dist",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,7 +29,20 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/scss"
+              ]
+            },
             "styles": [
+              "src/assets/scss/reset.scss",
+              "src/assets/scss/variables.scss",
+              "src/assets/scss/colors.scss",
+              "src/assets/scss/mixins.scss",
+              "src/assets/scss/config.scss",
+              "src/assets/scss/texts.scss",
+              "src/assets/scss/margins-and-paddings.scss",
+              "src/assets/scss/font-awesome.scss",
               "src/styles.scss"
             ],
             "scripts": []
@@ -89,7 +102,20 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets/scss"
+              ]
+            },
             "styles": [
+              "src/assets/scss/reset.scss",
+              "src/assets/scss/variables.scss",
+              "src/assets/scss/colors.scss",
+              "src/assets/scss/mixins.scss",
+              "src/assets/scss/config.scss",
+              "src/assets/scss/texts.scss",
+              "src/assets/scss/margins-and-paddings.scss",
+              "src/assets/scss/font-awesome.scss",
               "src/styles.scss"
             ],
             "scripts": []
