@@ -1,0 +1,15 @@
+@mixin scrollAnim($name, $anim, $entry, $exit)
+{
+    view-timeline-axis: block;
+    animation-timeline: $name;
+    animation-name: $anim;
+    animation-fill-mode: both;
+    animation-range: entry $entry exit $exit;
+}
+@mixin flexMx($align, $justify, $gap)
+{
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
