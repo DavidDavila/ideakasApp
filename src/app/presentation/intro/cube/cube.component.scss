@@ -1,0 +1,64 @@
+@import '../../config.scss';
+@import './animations.cube.component.scss';
+@import 'mixins';
+$imageRotate1 :17;
+$imageRotate2 :50;
+
+section
+{
+    height: 100vb;
+    width: 100vb;
+    @include flexMx(center, center, 0px);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 50vb);
+    @include scrollAnim(--intro, rotateCube, $intro-cube-entry, $intro-cube-exit);
+    will-change: opacity, scale, transform;
+    ul
+    {
+        display: flex;
+        flex-wrap: wrap;
+        width: $intro-cube-size;
+        height: $intro-cube-size;
+        perspective: 1100px;
+        position: relative;
+        inset: 0;
+        li
+        {
+
+            position: relative;
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background-size: cover;
+            background-position: center;
+            border-radius: 32px;
+            &:nth-child(1)
+            {
+                bottom: 100%;
+                left: 0;
+                transform: rotateX(285deg) translate(calc($imageRotate1 * -1%), calc($imageRotate2 * 1%));
+            }
+            &:nth-child(2)
+            {
+                top: 0%;
+                left: 100%;
+                transform: rotateY(285deg) translate(calc($imageRotate2 * -1%), calc($imageRotate1 * -1%));
+            }
+            &:nth-child(3)
+            {
+                top: 100%;
+                transform: rotateX(75deg) rotate(180deg) translate(calc($imageRotate1 * 1%), calc($imageRotate2 * 1%));
+                left: 0;
+            }
+            &:nth-child(4)
+            {
+                top: 0%;
+                right: 100%;
+                transform: rotateY(75deg) rotate(-90deg) translate(calc($imageRotate1 * 1%), calc($imageRotate2 * 1%));
+            }
+        }
+
+    }
+}

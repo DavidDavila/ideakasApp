@@ -1,0 +1,52 @@
+ @keyframes appearDissappear
+ {
+     0%
+     {
+         opacity: 0;
+         scale: 40%;
+     }
+
+     80%
+     {
+
+         opacity: 1;
+     }
+     80%
+     {
+         opacity: 1;
+         scale: 100%;
+
+     }
+     100%
+     {
+         opacity: 0;
+         scale: 70%;
+     }
+ }
+ @keyframes appear
+ {
+     from
+     {
+         opacity: 0;
+         scale: 70%;
+     }
+     to
+     {
+         opacity: 1;
+         scale: 100%;
+     }
+ }
+ @keyframes dissapear
+ {
+     from
+     {
+         opacity: 1;
+         scale: 100%;
+     }
+
+     to
+     {
+         opacity: 0;
+         scale: 70%;
+     }
+ }

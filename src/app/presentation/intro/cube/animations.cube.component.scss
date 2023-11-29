@@ -1,0 +1,26 @@
+@keyframes rotateCube
+{
+    0%
+    {
+        opacity: 0;
+        transform: rotate(45deg) scale(0.5);
+    }
+
+    20%
+    {
+
+        opacity: 1;
+    }
+    80%
+    {
+
+        opacity: 0.5;
+    }
+    100%
+    {
+
+        transform: rotate(180deg) scale(5);
+        opacity: 0;
+
+    }
+}
