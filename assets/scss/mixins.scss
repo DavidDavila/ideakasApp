@@ -13,3 +13,21 @@
     align-items: $align;
     gap: $gap;
 }
+@mixin dinamyc_anim($translate, $rotate, $scale, $index)
+{
+
+
+    @keyframes phone-#{$index}
+    {
+        0%
+        {
+            transform: translateY(calc($translate / 3 * -1)) translateX(calc(-50% + $translate )) rotate(calc($rotate )) scale(calc($scale));
+        }
+        100%
+        {
+            transform: translateY(calc($translate / 3 * -1)) translateX(-50%) rotate(0deg) scale($scale);
+
+        }
+    }
+    @include scrollAnim(--screenshot, phone-#{$index}, $screenshot-entry, $screenshot-exit);
+}
