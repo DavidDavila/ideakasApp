@@ -20,7 +20,6 @@ $intro-p-container-size: 90vmin;
         animation: appear 2s cubic-bezier(0, 1, 0.5, 1) 0ms forwards;
         @include flexMx(center, center, 0px);
         flex-wrap: wrap;
-
         h1
         {
             color: var(--bg-100);

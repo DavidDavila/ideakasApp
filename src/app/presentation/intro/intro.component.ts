@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { CubeComponent } from './cube/cube.component';
 
 @Component({
@@ -9,4 +9,9 @@ import { CubeComponent } from './cube/cube.component';
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss',
 })
-export class IntroComponent {}
+export class IntroComponent implements AfterViewInit {
+  constructor() {}
+  ngAfterViewInit(): void {
+    // (window as any)['skrollr'].init();
+  }
+}

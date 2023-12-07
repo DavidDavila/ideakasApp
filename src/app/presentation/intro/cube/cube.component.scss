@@ -15,6 +15,7 @@ section
     left: calc(50% - 50vb);
     @include scrollAnim(--intro, rotateCube, $intro-cube-entry, $intro-cube-exit);
     will-change: opacity, scale, transform;
+    transform-style: preserve-3d;
     ul
     {
         display: flex;

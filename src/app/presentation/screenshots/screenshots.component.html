@@ -1,5 +1,8 @@
 <section>
     <article>
-        <p>HOLA</p>
+        @for (phone of imgs; track phone) {
+        <img [src]="phone">
+        }
+
     </article>
 </section>

@@ -46,7 +46,7 @@
               "src/assets/scss/font-awesome.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/skrollr/dist/skrollr.min.js"]
           },
           "configurations": {
             "production": {
@@ -119,7 +119,7 @@
               "src/assets/scss/font-awesome.scss",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/skrollr/dist/skrollr.min.js"]
           }
         }
       }

@@ -1,7 +1,61 @@
+@import 'mixins';
+@import '../config.scss';
+
+
 section
 {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    view-timeline-name: --screenshot;
+    height: 100vw;
+    max-height: 65vb;
+    position: relative;
+    padding: 10vb 0;
     article
-    {}
+    {
+
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        img
+        {
+            inset: 0;
+
+
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100vw;
+            max-height: 75vb;
+            object-fit: contain;
+            border-radius: 4vmin;
+            position: absolute;
+
+
+            &:nth-child(1)
+            {
+                @include dinamyc_anim(-30%, -50deg, .6, 5);
+            }
+
+            &:nth-child(2)
+            {
+                @include dinamyc_anim(-10%, -35deg, .7, 4);
+            }
+
+            &:nth-child(3)
+            {
+                @include dinamyc_anim(0%, -20deg, .8, 3);
+            }
+
+            &:nth-child(4)
+            {
+                @include dinamyc_anim(10%, -5deg, .9, 2);
+            }
+
+            &:nth-child(5)
+            {
+                @include dinamyc_anim(30%, 10deg, 1, 1);
+            }
+        }
+    }
 }
