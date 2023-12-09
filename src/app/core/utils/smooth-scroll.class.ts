@@ -1,65 +1,39 @@
+declare const TweenMax: any;
+declare const Power1: any;
+
 export class SmoothScroll {
   moving: boolean;
   pos: number;
   delta: number = 0;
+  currentY: number = window.scrollY;
+
+  tweenMax = TweenMax;
   constructor(
     public target: HTMLElement,
-    public speed: number = 240,
-    public smooth: number = 6
+    public speed: number = 0.5,
+    public smooth: number = 1000
   ) {
     this.moving = false;
     this.pos = this.target.scrollTop;
-    this.target.addEventListener('mousewheel', this.scrolled.bind(this), {
-      passive: false,
+
+    // Agrega el evento de desplazamiento solo una vez
+    window.addEventListener('scroll', this.handleScroll.bind(this), {
+      passive: true,
     });
-    this.target.addEventListener('DOMMouseScroll', this.scrolled.bind(this), {
-      passive: false,
-    });
   }
 
-  scrolled(e: Event) {
-    console.log(
-      (window.scrollY / (document.body.clientHeight - window.innerHeight)) * 100
-    );
-    e.preventDefault();
+  handleScroll(e: Event) {
+    console.log(8);
 
-    const delta = this.normalizeWheelDelta(e);
-
-    this.pos += -delta * this.speed;
-    this.pos = Math.max(
-      0,
-      Math.min(this.pos, this.target.scrollHeight - this.target.clientHeight)
-    );
-
-    if (!this.moving) {
-      this.update();
-    }
+    var scrollTop = window.scrollY;
+    var finalScroll = scrollTop - this.normalizeDelta(e) * this.smooth;
+    console.log(scrollTop, finalScroll);
+    window.scrollTo({ top: finalScroll, behavior: 'smooth' });
   }
 
-  normalizeWheelDelta(e: any): number {
-    if (e.detail) {
-      if (e.wheelDelta) {
-        return (e.wheelDelta / e.detail / 40) * (e.detail > 0 ? 1 : -1); // Opera
-      } else {
-        return -e.detail / 3; // Firefox
-      }
-    } else {
-      return e.wheelDelta / 120; // IE,Safari,Chrome
-    }
-  }
-
-  update() {
-    this.moving = true;
-
-    const delta = (this.pos - this.target.scrollTop) / this.smooth;
-
-    this.target.scrollTop += delta;
-
-    if (Math.abs(delta) > 0.5 && delta !== this.delta) {
-      this.delta = delta;
-      requestAnimationFrame(this.update.bind(this));
-    } else {
-      this.moving = false;
-    }
+  normalizeDelta(e: any): 1 | -1 {
+    const res: 1 | -1 = e.clientY > this.currentY ? 1 : -1;
+    this.currentY = e.clientY;
+    return res;
   }
 }

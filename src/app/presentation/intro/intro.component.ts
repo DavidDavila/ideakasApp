@@ -12,6 +12,6 @@ import { CubeComponent } from './cube/cube.component';
 export class IntroComponent implements AfterViewInit {
   constructor() {}
   ngAfterViewInit(): void {
-    // (window as any)['skrollr'].init();
+    (window as any)['skrollr'].init();
   }
 }

@@ -1,4 +1,7 @@
-<section>
+<section data-200="opacity: 0; transform: rotate(45deg) scale(0.5);"
+    data-400="opacity: 1; transform: rotate(72deg) scale(1.4);"
+    data-1200="opacity: 0.5; transform: rotate(153deg) scale(4.1);"
+    data-1600="opacity: 0; transform: rotate(180deg) scale(5);">
     <ul>
         @for (img of imgs; track img) {
         <li [ngStyle]="{'background-image':'url('+img+')'}"></li>

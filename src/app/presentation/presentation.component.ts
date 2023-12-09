@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { SmoothScroll } from '../core/utils/smooth-scroll.class';
 import { ExamplesComponent } from './examples/examples.component';
 import { IntroComponent } from './intro/intro.component';
@@ -21,8 +21,9 @@ import { StatiticsComponent } from './statitics/statitics.component';
   templateUrl: './presentation.component.html',
   styleUrls: ['./config.scss', './presentation.component.scss'],
 })
-export class PresentationComponent {
-  constructor() {
-    new SmoothScroll(document.documentElement, 100, 12);
+export class PresentationComponent implements AfterViewInit {
+  constructor() {}
+  ngAfterViewInit(): void {
+    new SmoothScroll(document.documentElement);
   }
 }

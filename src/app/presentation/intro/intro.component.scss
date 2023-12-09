@@ -25,7 +25,7 @@ $intro-p-container-size: 90vmin;
             color: var(--bg-100);
             font-size: $intro-h1-size;
             font-weight: 500;
-            @include scrollAnim(--intro, dissapear, $intro-h1-entry, $intro-h1-exit);
+            // @include scrollAnim(--intro, dissapear, $intro-h1-entry, $intro-h1-exit);
             will-change: opacity, scale;
         }
 
@@ -60,11 +60,11 @@ $intro-p-container-size: 90vmin;
 
         &.one
         {
-            @include scrollAnim(--intro, appearDissappear, $intro-p1-entry, $intro-p1-exit);
+            // @include scrollAnim(--intro, appearDissappear, $intro-p1-entry, $intro-p1-exit);
         }
         &.two
         {
-            @include scrollAnim(--intro, appear, $intro-p2-entry, $intro-p2-exit);
+            //@include scrollAnim(--intro, appear, $intro-p2-entry, $intro-p2-exit);
             position: sticky;
         }
         b
